@@ -81,7 +81,66 @@
 ### Backup DNS Reg Key and also Folder/Exe In Case of Trolling
 `HKLM\SYSTEM\CurrentControlSet\Services\DNS`
 
+### The Entire Audit Policy:
+
+| Column 1 Header | Column 2 Header |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Detailed Tracking| Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | Row 1, Col 2    |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
 ### Cipher Suite Reg Keys
 - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256" -Name "Enabled" -Value 1
 - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128" -Name "Enabled" -Value 1
 - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128" -Name "Enabled" -Value 0
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server" -Name "Enabled" -Value 0
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server" -Name "Enabled" -Value 0
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" -Name "Enabled" -Value 0
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" -Name "Enabled" -Value 0
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" -Name "Enabled" -Value 1 Restart services
+
+### Late GPOS
+
+`run > gpedit.msc > User config > admin templates > system > prevent access to the command prompt/access to registry editing tools`
