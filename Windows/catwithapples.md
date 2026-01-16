@@ -39,7 +39,7 @@
 
 `Set-SmbServerConfiguration -EnableSMB1Protocol $false`
 
-### Reg Keys
+### Early Reg Keys
 `Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" -Name "LMCompatibilityLevel" -Value 4`
 
 `Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest" -Name "UseLogonCredential" -Value 0`
@@ -78,3 +78,10 @@
     Value data: 00000001 (Hexadecimal)
 7. Select OK.
 
+### Backup DNS Reg Key and also Folder/Exe In Case of Trolling
+`HKLM\SYSTEM\CurrentControlSet\Services\DNS`
+
+### Cipher Suite Reg Keys
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256" -Name "Enabled" -Value 1
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128" -Name "Enabled" -Value 1
+- Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128" -Name "Enabled" -Value 0
