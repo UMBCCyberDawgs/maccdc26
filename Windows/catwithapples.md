@@ -39,6 +39,8 @@
 
 `Set-SmbServerConfiguration -EnableSMB1Protocol $false`
 
+## 2. Good Changes
+
 ### Early Reg Keys
 `Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" -Name "LMCompatibilityLevel" -Value 4`
 
@@ -78,10 +80,12 @@
     Value data: 00000001 (Hexadecimal)
 7. Select OK.
 
-### Backup DNS Reg Key and also Folder/Exe In Case of Trolling
-`HKLM\SYSTEM\CurrentControlSet\Services\DNS`
+### Backup Registry/Event Log 
+`HKLM\SYSTEM\CurrentControlSet\Services\DNS and DNS exe/Folder are good to backup`
 
 ### The Entire Audit Policy:
+
+`Remember to set the corresponding GPO after done`
 
 | Name | S/F/SF/NA / (V) |
 |-----------------|-----------------|
@@ -107,32 +111,59 @@
 | RPC | SF |
 | Audit Token Right | S (V) |
 |-----------------|-----------------|
-| **DS Access**    | ************** |
+| **DS Access** | ************** |
 | Detailed Dir Service Repl | NA |
 | Dir Service Access | NA |
 | Dir Service Changes | SF |
 | Dir Service Repl | NA |
 |-----------------|-----------------|
-| **Logon/Logoff**    | ************** |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Logon/Logoff** | ************** |
+| Account Lockout | S |
+| Group Membership | S |
+| All 3 IpSecs  | NA |
+| Logoff | S |
+| Logon | SF |
+| Network Policy Server | SF |
+| Other Logon/Logoff Events | SF |
+| Special Logon | SF |
+| User/Device Claims | NA |
 |-----------------|-----------------|
-| Row 1, Col 1    | ************** |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Object Access** | ************** |
+| Application Generated | SF |
+| Cert Services | SF |
+| Central Policy Staging | NA |
+| Detailed File Share | S |
+| File Share | SF |
+| Filtering Platform Conn | S (**V**) | 
+| Filtering Platform Drop | NA |
+| Handle Manipulation | NA (VV) |
+| Kernel Object | NA |
+| Other Object Access Events | NA |
+| Removable Storage | SF |
+| Registry | S |
+| SAM | S |
 |-----------------|-----------------|
-| Row 1, Col 1    | ************** |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Policy Change** | ************** |
+| Audit Policy Change | SF |
+| Authentication Policy Change | SF |
+| Authorization Policy Change | SF |
+| Filtering Platform Policy Change | S (V) |
+| MPSSVC | NA |
+| Other Policy | NA |
 |-----------------|-----------------|
-| Row 1, Col 1    | ************** |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Privilege Use** | ************** |
+| Non Sensitive Priv Use | NA |
+| Other Priv Use | NA |
+| Sensitive Priv Use | SF |
 |-----------------|-----------------|
-| Row 1, Col 1    | ************** |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **System**    | ************** |
+| IpSec Driver    | S |
+| Other System Events | F |
+| Security State Change | SF |
+| Security System Extension | SF |
+| System Integrity | SF |
 |-----------------|-----------------|
+
 ### Cipher Suite Reg Keys
 - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256" -Name "Enabled" -Value 1
 - Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128" -Name "Enabled" -Value 1
@@ -146,3 +177,7 @@
 ### Late GPOS
 
 `run > gpedit.msc > User config > admin templates > system > prevent access to the command prompt/access to registry editing tools`
+
+## 3. Boredom
+
+### Create Custom Views for Event Viewer
