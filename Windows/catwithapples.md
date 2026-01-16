@@ -83,51 +83,53 @@
 
 ### The Entire Audit Policy:
 
-| Column 1 Header | Column 2 Header |
+| Name | S/F/SF/NA / (V) |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Account Logon** | ************** |
+| Credential Validation | SF |
+| Kerberos Auth Service | SF |
+| Kerberos Service Ticket Ops | SF |
+| Other Account Logon Events | SF |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Account Management** | ************** |
+| App Group | SF |
+| Comp Account | SF |
+| Distr Group | SF |
+| Other Acct | SF |
+| Sec Group | SF |
+| User Account | SF |
 |-----------------|-----------------|
-| Detailed Tracking| Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **Detailed Tracking** | ************** |
+| DPAPI | NA |
+| PnP | S |
+| Process Creation | SF |
+| Process Termination | NA |
+| RPC | SF |
+| Audit Token Right | S (V) |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
+| **DS Access**    | ************** |
+| Detailed Dir Service Repl | NA |
+| Dir Service Access | NA |
+| Dir Service Changes | SF |
+| Dir Service Repl | NA |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-|-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
-| Row 2, Col 1    | Row 2, Col 2    |
-| Row 3, Col 1    | Row 3, Col 2    |
-|-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
+| **Logon/Logoff**    | ************** |
 | Row 2, Col 1    | Row 2, Col 2    |
 | Row 3, Col 1    | Row 3, Col 2    |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
+| Row 1, Col 1    | ************** |
 | Row 2, Col 1    | Row 2, Col 2    |
 | Row 3, Col 1    | Row 3, Col 2    |
 |-----------------|-----------------|
-| Row 1, Col 1    | Row 1, Col 2    |
+| Row 1, Col 1    | ************** |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | ************** |
+| Row 2, Col 1    | Row 2, Col 2    |
+| Row 3, Col 1    | Row 3, Col 2    |
+|-----------------|-----------------|
+| Row 1, Col 1    | ************** |
 | Row 2, Col 1    | Row 2, Col 2    |
 | Row 3, Col 1    | Row 3, Col 2    |
 |-----------------|-----------------|
