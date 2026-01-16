@@ -10,5 +10,6 @@ Get-ScheduledTask | Stop-ScheduledTask
 Get-ScheduledTask | Disable-ScheduledTask
 
 $servicesToStop = @("CertPropSvc", "DiagTrack", "MSDTC", "MSMQ", "PlugPlay", "Spooler", "UsoSvc", "TokenBroker")
-Get-Service -Name $servicesToStop | Stop-Service -Force -PassThru | Set-Service -StartupType Disabled
+Get-Service -Name $servicesToStop | Set-Service -StartupType Automatic -PassThru | Start-Service -Force
+
 
