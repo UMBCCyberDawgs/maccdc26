@@ -23,18 +23,25 @@
 
 ### Harden FW
 `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True`
-`netsh advfirewall import "C:\Windows\System32\ja-jq\default.wfw" set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True -DefaultInboundAction Block -DefaultOutboundAction Block -NotifyOnListen True -LogAllowed True -LogBlocked True -LogFileName %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log` 
+
+`netsh advfirewall import "C:\Windows\System32\ja-jq\default.wfw" set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True -DefaultInboundAction Block -DefaultOutboundAction Block -NotifyOnListen True -LogAllowed True -LogBlocked True -LogFileName %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log`
+
 `New-NetFirewallRule -DisplayName "Block Inbound NetBIOS" -Direction Inbound -Protocol UDP -LocalPort 137-138 -Action Block`
+
 `New-NetFirewallRule -DisplayName "Block Inbound SMB" -Direction Inbound -Protocol TCP -LocalPort 445 -Action Block`
+
 `New-NetFirewallRule -DisplayName "Block Inbound RDP" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Block`
+
 `netsh advfirewall export “C:\Windows\System32\ja-jq\good.wfw”`
 
 ### Disable Bad Features
-`Disable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"` 
+`Disable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"`
+
 `Set-SmbServerConfiguration -EnableSMB1Protocol $false`
 
 ### Reg Keys
 `Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" -Name "LMCompatibilityLevel" -Value 4`
+
 `Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest" -Name "UseLogonCredential" -Value 0`
 
 ### ZeroLogon Mitigations
@@ -57,7 +64,6 @@
 
 `Add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa and Set the value of the registry key to: “RunAsPPL”=dword:00000001`
 
-
 1. Open the Group Policy Management.
 2. Create a new Group Policy Object (GPO) linked at the domain level.
 3. Right-click the GPO, and then select Edit to open the Group Policy Management Editor.
@@ -70,4 +76,5 @@
     Value name: RunAsPPL
     Value type: REG_DWORD
     Value data: 00000001 (Hexadecimal)
-7. Select OK.`
+7. Select OK.
+
