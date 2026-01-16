@@ -1,4 +1,4 @@
-$Password = Read-Host -AsSecureString
+Host$Password = Read-Host -AsSecureString
 New-LocalUser "FatCat" -Password $Password -FullName "FatCat The First"
 Add-LocalGroupMember -Group "Administrators" -Member "FatCat"
 
@@ -12,4 +12,5 @@ Get-ScheduledTask | Disable-ScheduledTask
 $servicesToStop = @("CertPropSvc", "DiagTrack", "MSDTC", "MSMQ", "PlugPlay", "Spooler", "UsoSvc", "TokenBroker")
 Get-Service -Name $servicesToStop | Set-Service -StartupType Automatic -PassThru | Start-Service -Force
 
+Read-Host -Prompt "Press Enter to exit"
 
