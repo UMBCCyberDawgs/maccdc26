@@ -47,7 +47,7 @@ def alert(flow_key, flow):
         for i in range(len(flow["timestamps"]) - 1)
     ]
 
-    print("\n🚨 UDP BEACONING SUSPECTED")
+    print("\n UDP BEACONING SUSPECTED")
     print(f"Flow       : {flow_key[0]}:{flow_key[1]} → {flow_key[2]}:{flow_key[3]}")
     print(f"Packets    : {len(flow['timestamps'])}")
     print(f"Avg period : {sum(intervals)/len(intervals):.3f}s")
@@ -74,9 +74,10 @@ def packet_handler(pkt):
         alert(flow_key, flow)
 
 def main():
-    print("🛡️  UDP Beaconing Malware Detector")
+    print("UDP Beaconing Malware Detector")
     print("Listening for suspicious UDP traffic...\n")
     sniff(filter="udp", prn=packet_handler, store=False)
+    print("No beaconing found")
 
 if __name__ == "__main__":
     main()
