@@ -1,0 +1,53 @@
+Wyatt Kipp 2026 MACCDC notes and changes to be made on the 2019 webserver
+GOOD_________________________________________________________________
+-Users and perms seem good
+-no weird shares
+-
+
+
+
+
+
+-System honestly seems rather clear
+NEUTRAL_____________________________________________________________________________________
+-RDP is not working to connect to the box
+-box is domain joined
+
+
+
+
+BAD_________________________________________________________________________________________
+-port 443 is not open for https
+-needs updates to windows, (likely) IIS
+-ungodly amount of listening/open connections
+-default creds
+-iis def misconfigured
+-services
+-firewall down, maybe misconfig'd
+-remove weird tasks
+-SMB misconfig'd
+-tasks
+
+
+Fixes to implement:
+
+-run updates for windows
+-close the weird connections
+X-change admin passwords/make new acc/disable old acc
+-turn on firewall
+-turn off powerhshell/cmd
+-turn on UAC
+-block port 139
+X-disable tasks
+-change the IIS worker to only it's directory, protect the web files to read only
+-drop ftp, mail if not scored on day of
+
+service list:
+-Web Account Manager
+-update Orchestrator Service
+-Print Spooler
+-Plug and Play
+-Message Queuing
+-Distributed Transaction Coordinator
+-Connected User Experiences and Telemetry
+-Certificate Propogation
