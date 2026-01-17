@@ -1,0 +1,2 @@
+﻿"Hostname","OSVersion","SMBv1Enabled","LLMNREnabled","NTLMv1Allowed","NetBIOSoverTcpipEnabled","AutoPlayEnabled","TelnetInstalled","TelnetRunning","MSDTProtocolEnabled","Timestamp"
+"WINDOWSPC","Microsoft Windows 11 Education (10.0.26100)","False","True","True","True","True","False","False","False","2026-01-17T13:01:06"
