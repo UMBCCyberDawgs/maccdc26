@@ -9,6 +9,7 @@ $newFolder.Attributes = "Hidden, ReadOnly"
 
 #Create backup folder for other stuff
 $backup = New-Item -Path "C:\Windows\System32\ja-jq\backup" -ItemType Directory
+$backup.Attributes = "Hidden, ReadOnly"
 
 #Backup registry hives
 reg export HKLM "C:\Windows\System32\ja-jq\backup\hklmbackup.reg"
