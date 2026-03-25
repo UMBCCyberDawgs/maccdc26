@@ -31,7 +31,7 @@ Write-Host "Firewall configured"
 
 #Disable features
 Disable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"
-Set-SmbServerConfiguration -EnableSMB1Protocol false
+Set-SmbServerConfiguration -EnableSMB1Protocol $false
 
 #Set registry keys
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa" -Name "LMCompatibilityLevel" -Value 4
