@@ -4,15 +4,16 @@ $ErrorActionPreference = "Continue"
 
 #Create fw directory
 
-$newFolder = New-Item -Path "C:\Windows\System32\ja-jq\"
+$newFolder = New-Item -Path "C:\Windows\System32\ja-jq" -ItemType Directory
 $newFolder.Attributes = "Hidden, ReadOnly"
 
 #Create backup folder for other stuff
-$newFolder2 = New-Item -Path "C:\Windows\System\ja-jq\backup"
+$backup = New-Item -Path "C:\Windows\System32\ja-jq\backup" -ItemType Directory
 
 #Backup registry hives
-reg export HKLM "C:\Windows\System\ja-jq\backup"
-reg export HKCU "C:\Windows\System\ja-jq\backup"
+reg export HKLM "C:\Windows\System32\ja-jq\backup\hklmbackup.reg"
+reg export HKCU "C:\Windows\System32\ja-jq\backup\hkcubackup.reg"
+reg export HKCR "C:\Windows\System32\ja-jq\backup\hkcrbackup.reg"
 
 #Backup old fw
 netsh advfirewall export "C:\Windows\System32\ja-jq\default.wfw"
