@@ -1,0 +1,13 @@
+/etc/sysconfig/iptables
+/etc/iptables
+/etc/passwd
+/etc/shadow
+/etc/group
+/etc/gshadow
+/etc/pam.d
+/etc/ssh
+/etc/sudoers
+/etc/rc.local
+/etc/nsswitch.conf
+/etc/pam.d/
+/etc/ssh/

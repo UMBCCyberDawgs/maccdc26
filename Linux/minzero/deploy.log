@@ -1,0 +1,559 @@
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+[mail] starting autofirewall.sh
+[web] starting autofirewall.sh
+[mail] [*] Applying hardened firewall rules...
+[mail] [+] Allow inbound TCP port 22
+[mail] [+] Allow inbound TCP port 80
+[mail] [+] Deny outbound ICMP
+[mail] [+] Allow outbound TCP port 587
+[mail] [+] Allow outbound TCP port 995
+[mail] [+] Allow outbound TCP port 80
+[mail] [+] Allow outbound UDP port 53
+[mail] [+] Allow outbound TCP port 53
+[mail] [+] Allow outbound TCP port 443
+[mail] net.ipv6.conf.all.disable_ipv6 = 1
+[mail] net.ipv6.conf.default.disable_ipv6 = 1
+[mail] [*] Saving iptable rules across reboot...
+[mail] [✓] Firewall locked down successfully.
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+[mail] Backing up passwd and shadow [DONE]
+[mail] Added bluey
+[mail] Cleaned up home directory
+[mail] Added to sudoers group
+[mail] Setting password for root & bluey user
+[mail] Received: $6$a4c55a00e7bdb63f$7UnoHEIVuJrUSh/wxq3fV15JFPvPWGpZ6VthRgcZqYmbhT9jlwMT/iGOrtQXx8q83iLQo.yxh2VIW6H95BmsB.
+[mail] /tmp/harden.sh: line 34: addgroup: command not found
+[mail] Locking root
+[mail] Locking bin
+[mail] Locking daemon
+[mail] Locking mail
+[mail] Locking ftp
+[mail] Locking http
+[mail] Locking dbus
+[mail] Locking systemd-coredump
+[mail] Locking systemd-network
+[mail] Locking systemd-oom
+[mail] Locking systemd-journal-remote
+[mail] Locking systemd-resolve
+[mail] Locking systemd-timesync
+[mail] Locking tss
+[mail] Locking uuidd
+[mail] Locking alpm
+[mail] Locking _talkd
+[mail] Locking avahi
+[mail] Locking named
+[mail] Locking dnsmasq
+[mail] Locking fwupd
+[mail] Locking git
+[mail] Locking nm-openconnect
+[mail] Locking nm-openvpn
+[mail] Locking ntp
+[mail] Locking openvpn
+[mail] Locking passim
+[mail] Locking pcscd
+[mail] Locking polkitd
+[mail] Locking rpc
+[mail] Locking rpcuser
+[mail] Locking rtkit
+[mail] Locking sddm
+[mail] Locking user
+[mail] done harden.sh
+[mail] All done
+[web] Backing up passwd and shadow [DONE]
+[web] Added bluey
+[web] Cleaned up home directory
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/.'
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/..'
+[web] Added to sudoers group
+[web] Setting password for root & bluey user
+[web] Received: $6$b9a05db37e77f06a$0Ltj3I//zkuE7buOf/JrGnYjLCsFil6mrNbUbLUJjAxI/ENH1sag4kDIQlfrCtSb2AeEx8LhANyfaYGk6Bctb1
+[web] Locking root
+[web] Locking daemon
+[web] Locking bin
+[web] Locking sys
+[web] Locking sync
+[web] Locking games
+[web] Locking man
+[web] Locking lp
+[web] Locking mail
+[web] Locking news
+[web] Locking uucp
+[web] Locking proxy
+[web] Locking www-data
+[web] Locking backup
+[web] Locking list
+[web] Locking irc
+[web] Locking _apt
+[web] Locking systemd-network
+[web] Locking systemd-timesync
+[web] Locking dhcpcd
+[web] Locking messagebus
+[web] Locking systemd-resolve
+[web] Locking pollinate
+[web] Locking polkitd
+[web] Locking syslog
+[web] Locking uuidd
+[web] Locking tcpdump
+[web] Locking tss
+[web] Locking landscape
+[web] Locking fwupd-refresh
+[web] Locking usbmux
+[web] Locking sshd
+[web] Locking user
+[web] Locking mongodb
+[web] Locking lxd
+[web] done harden.sh
+[web] All done
+Finished
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+[mail] starting autofirewall.sh
+[web] starting autofirewall.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+[mail] [*] Applying hardened firewall rules...
+[mail] [+] Allow inbound TCP port 22
+[mail] [+] Allow inbound TCP port 80
+[mail] [+] Deny outbound ICMP
+[mail] [+] Allow outbound TCP port 587
+[mail] [+] Allow outbound TCP port 995
+[mail] [+] Allow outbound TCP port 80
+[mail] [+] Allow outbound UDP port 53
+[mail] [+] Allow outbound TCP port 53
+[mail] [+] Allow outbound TCP port 443
+[mail] net.ipv6.conf.all.disable_ipv6 = 1
+[mail] net.ipv6.conf.default.disable_ipv6 = 1
+[mail] [*] Saving iptable rules across reboot...
+[mail] [✓] Firewall locked down successfully.
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[mail] Backing up passwd and shadow [DONE]
+[mail] Added bluey
+[mail] Cleaned up home directory
+[mail] Added to sudoers group
+[mail] Setting password for root & bluey user
+[mail] /tmp/harden.sh: line 34: addgroup: command not found
+[mail] Received: $6$a4c55a00e7bdb63f$7UnoHEIVuJrUSh/wxq3fV15JFPvPWGpZ6VthRgcZqYmbhT9jlwMT/iGOrtQXx8q83iLQo.yxh2VIW6H95BmsB.
+[mail] Locking root
+[mail] Locking bin
+[mail] Locking daemon
+[mail] Locking mail
+[mail] Locking ftp
+[mail] Locking http
+[mail] Locking dbus
+[mail] Locking systemd-coredump
+[mail] Locking systemd-network
+[mail] Locking systemd-oom
+[mail] Locking systemd-journal-remote
+[mail] Locking systemd-resolve
+[mail] Locking systemd-timesync
+[mail] Locking tss
+[mail] Locking uuidd
+[mail] Locking alpm
+[mail] Locking _talkd
+[mail] Locking avahi
+[mail] Locking named
+[mail] Locking dnsmasq
+[mail] Locking fwupd
+[mail] Locking git
+[mail] Locking nm-openconnect
+[mail] Locking nm-openvpn
+[mail] Locking ntp
+[mail] Locking openvpn
+[mail] Locking passim
+[mail] Locking pcscd
+[mail] Locking polkitd
+[mail] Locking rpc
+[mail] Locking rpcuser
+[mail] Locking rtkit
+[mail] Locking sddm
+[mail] Locking user
+[mail] done harden.sh
+[mail] All done
+[web] Backing up passwd and shadow [DONE]
+[web] Added bluey
+[web] Cleaned up home directory
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/.'
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/..'
+[web] Added to sudoers group
+[web] Setting password for root & bluey user
+[web] Received: $6$b9a05db37e77f06a$0Ltj3I//zkuE7buOf/JrGnYjLCsFil6mrNbUbLUJjAxI/ENH1sag4kDIQlfrCtSb2AeEx8LhANyfaYGk6Bctb1
+[web] Locking root
+[web] Locking daemon
+[web] Locking bin
+[web] Locking sys
+[web] Locking sync
+[web] Locking games
+[web] Locking man
+[web] Locking lp
+[web] Locking mail
+[web] Locking news
+[web] Locking uucp
+[web] Locking proxy
+[web] Locking www-data
+[web] Locking backup
+[web] Locking list
+[web] Locking irc
+[web] Locking _apt
+[web] Locking systemd-network
+[web] Locking systemd-timesync
+[web] Locking dhcpcd
+[web] Locking messagebus
+[web] Locking systemd-resolve
+[web] Locking pollinate
+[web] Locking polkitd
+[web] Locking syslog
+[web] Locking uuidd
+[web] Locking tcpdump
+[web] Locking tss
+[web] Locking landscape
+[web] Locking fwupd-refresh
+[web] Locking usbmux
+[web] Locking sshd
+[web] Locking user
+[web] Locking mongodb
+[web] Locking lxd
+[web] done harden.sh
+[web] All done
+Finished
+=== Compressing scripts ===
+tar: Removing leading `../' from member names
+../backup.sh
+tar: Removing leading `../' from hard link targets
+../c2scanner.sh
+../watchdawg.sh
+../watchdawg-sources
+../auditd-rules
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+[mail] starting autofirewall.sh
+[web] starting autofirewall.sh
+[mail] [*] Applying hardened firewall rules...
+[mail] [+] Allow inbound TCP port 22
+[mail] [+] Allow inbound TCP port 80
+[mail] [+] Deny outbound ICMP
+[mail] [+] Allow outbound TCP port 587
+[mail] [+] Allow outbound TCP port 995
+[mail] [+] Allow outbound TCP port 80
+[mail] [+] Allow outbound UDP port 53
+[mail] [+] Allow outbound TCP port 53
+[mail] [+] Allow outbound TCP port 443
+[mail] net.ipv6.conf.all.disable_ipv6 = 1
+[mail] net.ipv6.conf.default.disable_ipv6 = 1
+[mail] [*] Saving iptable rules across reboot...
+[mail] [✓] Firewall locked down successfully.
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+[mail] Backing up passwd and shadow [DONE]
+[mail] Added bluey
+[mail] Cleaned up home directory
+[mail] Added to sudoers group
+[mail] Setting password for root & bluey user
+[mail] Received: $6$a4c55a00e7bdb63f$7UnoHEIVuJrUSh/wxq3fV15JFPvPWGpZ6VthRgcZqYmbhT9jlwMT/iGOrtQXx8q83iLQo.yxh2VIW6H95BmsB.
+[mail] /tmp/harden.sh: line 34: addgroup: command not found
+[mail] done harden.sh
+[mail] All done
+[web] Backing up passwd and shadow [DONE]
+[web] Added bluey
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/.'
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/..'
+[web] Cleaned up home directory
+[web] Added to sudoers group
+[web] Setting password for root & bluey user
+[web] Received: $6$b9a05db37e77f06a$0Ltj3I//zkuE7buOf/JrGnYjLCsFil6mrNbUbLUJjAxI/ENH1sag4kDIQlfrCtSb2AeEx8LhANyfaYGk6Bctb1
+[web] done harden.sh
+[web] All done
+Finished
+=== Compressing scripts ===
+tar: Removing leading `../' from member names
+../backup.sh
+tar: Removing leading `../' from hard link targets
+../c2scanner.sh
+../watchdawg.sh
+../watchdawg-sources
+../auditd-rules
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+[web] starting autofirewall.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+[web] Backing up passwd and shadow [DONE]
+[web] Added bluey
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/.'
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/..'
+[web] Cleaned up home directory
+[web] Added to sudoers group
+[web] Setting password for root & bluey user
+[web] Received: $6$b9a05db37e77f06a$0Ltj3I//zkuE7buOf/JrGnYjLCsFil6mrNbUbLUJjAxI/ENH1sag4kDIQlfrCtSb2AeEx8LhANyfaYGk6Bctb1
+[web] done harden.sh
+[web] All done
+[mail] starting autofirewall.sh
+[mail] [*] Applying hardened firewall rules...
+[mail] [+] Allow inbound TCP port 22
+[mail] [+] Allow inbound TCP port 80
+[mail] [+] Deny outbound ICMP
+[mail] [+] Allow outbound TCP port 587
+[mail] [+] Allow outbound TCP port 995
+[mail] [+] Allow outbound TCP port 80
+[mail] [+] Allow outbound UDP port 53
+[mail] [+] Allow outbound TCP port 53
+[mail] [+] Allow outbound TCP port 443
+[mail] net.ipv6.conf.all.disable_ipv6 = 1
+[mail] net.ipv6.conf.default.disable_ipv6 = 1
+[mail] [*] Saving iptable rules across reboot...
+[mail] [✓] Firewall locked down successfully.
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[mail] Backing up passwd and shadow [DONE]
+[mail] Added bluey
+[mail] Cleaned up home directory
+[mail] Added to sudoers group
+[mail] Setting password for root & bluey user
+[mail] Received: $6$a4c55a00e7bdb63f$7UnoHEIVuJrUSh/wxq3fV15JFPvPWGpZ6VthRgcZqYmbhT9jlwMT/iGOrtQXx8q83iLQo.yxh2VIW6H95BmsB.
+[mail] /tmp/harden.sh: line 34: addgroup: command not found
+[mail] done harden.sh
+[mail] All done
+Finished
+=== Compressing scripts ===
+tar: Removing leading `../' from member names
+../backup.sh
+tar: Removing leading `../' from hard link targets
+../c2scanner.sh
+../watchdawg.sh
+../watchdawg-sources
+../auditd-rules
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+[mail] starting autofirewall.sh
+[web] starting autofirewall.sh
+[mail] [*] Applying hardened firewall rules...
+[mail] [+] Allow inbound TCP port 22
+[mail] [+] Allow inbound TCP port 80
+[mail] [+] Deny outbound ICMP
+[mail] [+] Allow outbound TCP port 587
+[mail] [+] Allow outbound TCP port 995
+[mail] [+] Allow outbound TCP port 80
+[mail] [+] Allow outbound UDP port 53
+[mail] [+] Allow outbound TCP port 53
+[mail] [+] Allow outbound TCP port 443
+[mail] net.ipv6.conf.all.disable_ipv6 = 1
+[mail] net.ipv6.conf.default.disable_ipv6 = 1
+[mail] [*] Saving iptable rules across reboot...
+[mail] [✓] Firewall locked down successfully.
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+[mail] Backing up passwd and shadow [DONE]
+[mail] Added bluey
+[mail] Cleaned up home directory
+[mail] Added to sudoers group
+[mail] Setting password for root & bluey user
+[mail] Received: $6$a4c55a00e7bdb63f$7UnoHEIVuJrUSh/wxq3fV15JFPvPWGpZ6VthRgcZqYmbhT9jlwMT/iGOrtQXx8q83iLQo.yxh2VIW6H95BmsB.
+[mail] /tmp/harden.sh: line 34: addgroup: command not found
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] passwd: password changed.
+[mail] done harden.sh
+[mail] All done
+[web] Backing up passwd and shadow [DONE]
+[web] Added bluey
+[web] Cleaned up home directory
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/.'
+[web] rm: refusing to remove '.' or '..' directory: skipping '/home/bluey/..'
+[web] Added to sudoers group
+[web] Setting password for root & bluey user
+[web] Received: $6$b9a05db37e77f06a$0Ltj3I//zkuE7buOf/JrGnYjLCsFil6mrNbUbLUJjAxI/ENH1sag4kDIQlfrCtSb2AeEx8LhANyfaYGk6Bctb1
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] passwd: password changed.
+[web] done harden.sh
+[web] All done
+Finished
+=== Compressing scripts ===
+tar: Removing leading `../' from member names
+../backup.sh
+tar: Removing leading `../' from hard link targets
+../c2scanner.sh
+../watchdawg.sh
+../watchdawg-sources
+../auditd-rules
+[web] Begin system 10.67.2.2 with user user
+scp: stat local "StrictHostKeyChecking=no": No such file or directory
+[mail] Begin system 10.67.2.3 with user user
+[web] starting autofirewall.sh
+[mail] starting autofirewall.sh
+scp: stat local "StrictHostKeyChecking=no": No such file or directory
+[web] sudo: unable to run /tmp/pass: No such file or directory
+[web] sudo: no password was provided
+[web] sudo: a password is required
+[web] done autofirewall.sh
+[web] starting harden.sh
+[web] sudo: unable to run /tmp/pass: No such file or directory
+[web] sudo: no password was provided
+[web] sudo: a password is required
+[web] done harden.sh
+[web] All done
+Finished
+=== Compressing scripts ===
+tar: Removing leading `../' from member names
+../backup.sh
+tar: Removing leading `../' from hard link targets
+../c2scanner.sh
+../watchdawg.sh
+../watchdawg-sources
+../auditd-rules
+[web] Begin system 10.67.2.2 with user user
+[mail] Begin system 10.67.2.3 with user user
+ssh: connect to host 10.67.2.3 port 22: Connection refused
+[mail] starting autofirewall.sh
+scp: Connection closed
+[mail] ssh: connect to host 10.67.2.3 port 22: Connection refused
+[mail] done autofirewall.sh
+[mail] starting harden.sh
+[mail] ssh: connect to host 10.67.2.3 port 22: Connection refused
+[mail] done harden.sh
+[mail] All done
+[web] starting autofirewall.sh
+[web] [*] Applying hardened firewall rules...
+[web] [+] Allow inbound TCP port 22
+[web] [+] Allow inbound TCP port 80
+[web] [+] Deny outbound ICMP
+[web] [+] Allow outbound TCP port 80
+[web] [+] Allow outbound UDP port 53
+[web] [+] Allow outbound TCP port 53
+[web] [+] Allow outbound TCP port 443
+[web] net.ipv6.conf.all.disable_ipv6 = 1
+[web] net.ipv6.conf.default.disable_ipv6 = 1
+[web] [*] Saving iptable rules across reboot...
+[web] [✓] Firewall locked down successfully.
+[web] done autofirewall.sh
+[web] starting harden.sh
+Finished

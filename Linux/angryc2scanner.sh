@@ -1,0 +1,40 @@
+#!/bin/sh
+# Like c2scanner but ANGRY
+# It will murder (in cold blood!) any process attempting to reach out to the world
+
+mkdir -p scans
+
+FNAME="$(date +%s)"
+FNAME_LAST="$(date +%s)ProMax"
+
+while true
+do
+  FNAME="$(date +%s)"
+  ss --no-header -tupn > "scans/$FNAME"
+
+  DIFF=$(diff "scans/$FNAME" "scans/$FNAME_LAST")
+  if [ "$DIFF" != "" ];
+  then
+    echo "====== NEW STUFF HAPPENING ======"
+    echo "event at $(date)"
+    diff "scans/$FNAME" "scans/$FNAME_LAST"
+
+    echo "====== COMMITING MURDER ======"
+    ss -tpn | grep -Po 'pid=\K[0-9]+' > hitlist
+    while IFS= read -r line; do
+       ppid=$(ps --no-headers -fp "$line" | awk '$1 { print $3 }')
+       sudo kill -9 "$line"
+       while [ "$ppid" != "$line" ] && [ "$ppid" != "1" ]; do
+         prev=$ppid
+         ppid=$(ps --no-headers -fp "$prev" | awk '$1 { print $3 }')
+         kill -9 prev;
+         echo "done murding $prev"
+         done
+       echo "done murding $line"
+    done < hitlist
+  fi
+
+  FNAME_LAST=$FNAME
+
+  sleep .5
+done

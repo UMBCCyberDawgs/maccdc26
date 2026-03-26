@@ -1,25 +1,27 @@
-#!/bin/bash
+#!/bin/sh
 # Script to capture snapshot of initial compitition state
 
 # Ensure running as root
-if [ "$EUID" -ne 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
     echo "[ERROR] This script must be run as root or with sudo."
     exit 1
 fi
 
-mkdir -p /root/bk/filesystem
-mkdir -p /root/bk/filesystem/etc
-mkdir -p /root/bk/filesystem/home
-mkdir -p /root/bk/filesystem/var
-mkdir -p /root/bk/filesystem/var/www
-mkdir -p /root/bk/filesystem/var/log
-mkdir -p /root/bk/filesystem/var/spool
+BACKUP_DIR=/var/bk
 
-BACKUP_DIR=/root/bk
+mkdir -p $BACKUP_DIR/filesystem
+mkdir -p $BACKUP_DIR/filesystem/etc
+mkdir -p $BACKUP_DIR/filesystem/home
+mkdir -p $BACKUP_DIR/filesystem/root
+mkdir -p $BACKUP_DIR/filesystem/var
+mkdir -p $BACKUP_DIR/filesystem/var/www
+mkdir -p $BACKUP_DIR/filesystem/var/log
+mkdir -p $BACKUP_DIR/filesystem/var/spool
 
 ## Criticial files and directories
 cp -pr /etc/*       $BACKUP_DIR/filesystem/etc/
 cp -pr /home/*      $BACKUP_DIR/filesystem/home/
+cp -pr /root/*      $BACKUP_DIR/filesystem/root/
 cp -pr /var/www/*   $BACKUP_DIR/filesystem/var/www/
 cp -pr /var/log/*   $BACKUP_DIR/filesystem/var/log/
 cp -pr /var/spool/* $BACKUP_DIR/filesystem/var/spool/

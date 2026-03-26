@@ -1,34 +1,59 @@
-#!/bin/bash
-# Watchdawg v1.0.0
+#!/bin/sh
+printf "▗▖ ▗▖ ▗▄▖▗▄▄▄▖▗▄▄▖▗▖ ▗▖▗▄▄▄  ▗▄▖ ▗▖ ▗▖ ▗▄▄▖\n";
+printf "▐▌ ▐▌▐▌ ▐▌ █ ▐▌   ▐▌ ▐▌▐▌  █▐▌ ▐▌▐▌ ▐▌▐▌   \n";
+printf "▐▌ ▐▌▐▛▀▜▌ █ ▐▌   ▐▛▀▜▌▐▌  █▐▛▀▜▌▐▌ ▐▌▐▌▝▜▌\n";
+printf "▐▙█▟▌▐▌ ▐▌ █ ▝▚▄▄▖▐▌ ▐▌▐▙▄▄▀▐▌ ▐▌▐▙█▟▌▝▚▄▞▘\n";
+printf "                           Version 1.1.1   \n\n";
 
-echo "Starting Watchdawg v0.0.1"
-if [[ "$1" != "" && "$2" != "" ]]; then
-  BACKUP_DIR=$1
-  INPUT=$2
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+   # directory to backup copies of files
+   BACKUP_DIR=$1
+   # input file which contains dirs and files to watch
+   INPUT=$2
 else
-  echo "no arguments"
-  exit
+   printf "no arguments. \ninput backup directory and input file"
+   exit
 fi
 
 
 
-mkdir -p $BACKUP_DIR
+mkdir -p "$BACKUP_DIR"
 echo "Backup dir created"
-file="/etc/passwd"
 LOG_DIR="/var/log/.wd/"
-chattr +a /var/log/
 mkdir -p "$LOG_DIR"
+chattr +a /var/log/.wd/
 
 
 # Read files and to watch
 while IFS= read -r line; do
-   printf "adding to watchlist: $line\n"
-   cp -p --parents "$line" "$BACKUP_DIR"
+   if [ -d "$line" ]; then
+
+   #LAST_CHAR="${ROW: -1}"
+   #if [[ "$LAST_CHAR" == "/" ]]; then
+      # handle folders
+      for filename in "$line"/*; do
+         #if [ -f "$filename" ]; then
+            # ADD THE THNIGLY
+         #else if [ -d "$filename" ]; then
+            # ADD THE THINGY
+            echo "$filename" >> "$INPUT"
+         #fi
+      done
+   elif [ -f "$line" ]; then
+
+      # handle files
+      #if [ -e "$filename"
+      printf "adding file to watchlist: %s\n" "$line"
+      cp -p --parents "$line" "$BACKUP_DIR"
+   else
+      printf "file or folder %s doesn't exist\n" "$line"
+   fi
 done < "$INPUT"
 
 
-while [[ true ]]; do
+while true; do
    while IFS= read -r line; do
+      [ -f "$line" ] || continue
       diff -q "$line" "$BACKUP_DIR$line"
       DIFF_EXIT_CODE=$?
 
@@ -42,5 +67,10 @@ while [[ true ]]; do
       fi
    done < "$INPUT"
 
-  sleep 3
+   sleep 3
 done
+
+
+# v1.0.0 -> watch files and output changes to log
+# v1.1.0 -> add support for watching directories
+# v1.1.1 -> mark only .wd dir as append only instead of /var/log
