@@ -1,0 +1,2 @@
+﻿"Hostname","OSVersion","SMBv1Enabled","LLMNREnabled","NTLMv1Allowed","NetBIOSoverTcpipEnabled","AutoPlayEnabled","TelnetInstalled","TelnetRunning","MSDTProtocolEnabled","Timestamp"
+"WEBSERVER2019","Microsoft Windows Server 2019 Standard (10.0.17763)","False","True","True","True","True","False","False","False","2026-01-17T11:46:52"
