@@ -1,5 +1,6 @@
 Cool stuff:
 
+```
 #!/bin/bash
 # Detect outbound SSH connections (zero-day exfil indicator)
 
@@ -37,3 +38,4 @@ ss -H -pt state established | while read -r line; do
   logger -p auth.warning \
     "Outbound SSH detected dst=$r_ip:$r_port pid=$pid user=$user exe=$exe cmd=\"$cmd\""
 done
+```
