@@ -1,43 +1,35 @@
 ﻿#Script Author - catwithapples/takumi
+#Script Author - catwithapples/takumi
 
 $ErrorActionPreference = "Continue"
 
 #Create fw directory
 
-$backuppath1 = "C:\Windows\System32\ja-jq"
-$backuppath2 = "$backuppath1\backup"
-$backuppath3 = "C:\ProgramData\Microsoft\Temp"
-
-$newFolder = New-Item -Path $backuppath1 -ItemType Directory
+$newFolder = New-Item -Path "C:\Windows\System32\ja-jq" -ItemType Directory
 $newFolder.Attributes = "Hidden, ReadOnly"
 
 #Create backup folder for other stuff
-$backup = New-Item -Path $backuppath2 -ItemType Directory
+$backup = New-Item -Path "C:\Windows\System32\ja-jq\backup" -ItemType Directory
 $backup.Attributes = "Hidden, ReadOnly"
 
-$extrabackup = New-Item -Path $backuppath3 -ItemType Directory
-$extrabackup.Attributes = "Hidden, ReadOnly"
-
 #Backup registry hives
-reg export HKLM "$backuppath2\hklmbackup.reg"
-reg export HKCU "$backuppath2\hkcubackup.reg"
-reg export HKCR "$backuppath2\hkcrbackup.reg"
+reg export HKLM "C:\Windows\System32\ja-jq\backup\hklmbackup.reg"
+reg export HKCU "C:\Windows\System32\ja-jq\backup\hkcubackup.reg"
+reg export HKCR "C:\Windows\System32\ja-jq\backup\hkcrbackup.reg"
 
 #Backup old fw
-netsh advfirewall export "$backuppath1\default.wfw"
-Get-NetFirewallRule | Export-Csv -Path "$backuppath1\DefaultRules.csv" -NoTypeInformation
+netsh advfirewall export "C:\Windows\System32\ja-jq\default.wfw"
+Get-NetFirewallRule | Export-Csv -Path "C:\Windows\System32\ja-jq\DefaultRules.csv" -NoTypeInformation
 
 #Hardening stage
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
-netsh advfirewall import "$backuppath1\default.wfw" Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True -DefaultInboundAction Block -DefaultOutboundAction Block -NotifyOnListen True -LogAllowed True -LogBlocked True -LogFileName %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log
+netsh advfirewall import "C:\Windows\System32\ja-jq\default.wfw" Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True -DefaultInboundAction Block -DefaultOutboundAction Block -NotifyOnListen True -LogAllowed True -LogBlocked True -LogFileName %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log
 
 New-NetFirewallRule -DisplayName "Block Inbound WinRM" -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound WinRM" -Direction Inbound -Protocol TCP -LocalPort 5986 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound RDP" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound NetBIOS" -Direction Inbound -Protocol UDP -LocalPort 137-138 -Action Block
-
-netsh advfirewall export "$backuppath1\good.wfw"
 
 #Disable features
 Disable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"
@@ -49,8 +41,8 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders
 Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces\tcpip* -Name NetbiosOptions -Value 2
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -Name FullSecureChannelProtection -Value 1
 
-#Add new registry keys
-reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v Negotiate /t REG_DWORD /d 0
+
+netsh advfirewall export "C:\Windows\System32\ja-jq\good.wfw"
 
 #Stop bad services
 
