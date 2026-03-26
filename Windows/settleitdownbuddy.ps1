@@ -31,9 +31,14 @@ Get-NetFirewallRule | Export-Csv -Path "$backuppath1\DefaultRules.csv" -NoTypeIn
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
 netsh advfirewall import "$backuppath1\default.wfw" Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True -DefaultInboundAction Block -DefaultOutboundAction Block -NotifyOnListen True -LogAllowed True -LogBlocked True -LogFileName %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log
 
+New-NetFirewallRule -DisplayName "Block Inbound " -Direction Inbound -Protocol TCP -LocalPort  -Action Block
+New-NetFirewallRule -DisplayName "Block Inbound WinRM" -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Block
+New-NetFirewallRule -DisplayName "Block Inbound WinRM" -Direction Inbound -Protocol TCP -LocalPort 5986 -Action Block
+New-NetFirewallRule -DisplayName "Block Inbound SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound RDP" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Block
-New-NetFirewallRule -DisplayName "Block Inbound SMB" -Direction Inbound -Protocol TCP -LocalPort 445 -Action Block
 New-NetFirewallRule -DisplayName "Block Inbound NetBIOS" -Direction Inbound -Protocol UDP -LocalPort 137-138 -Action Block
+
+netsh advfirewall export "$backuppath1\good.wfw"
 
 #Disable features
 Disable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"
